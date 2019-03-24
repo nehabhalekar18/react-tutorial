@@ -37,6 +37,8 @@ class AddContact extends Component {
     const newContact = { id: uuid(), name, email, phone };
     dispatch({ type: "ADD_CONTACT", payload: newContact });
     this.setState({ name: "", email: "", phone: "", errors: {} });
+
+    this.props.history.push("/");
   };
   render() {
     const { name, email, phone, errors } = this.state;
